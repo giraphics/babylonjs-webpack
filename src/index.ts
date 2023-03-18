@@ -7,7 +7,7 @@ import { Engine } from "@babylonjs/core/Engines/engine";
  import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
  import { DirectionalLight } from "@babylonjs/core/Lights/directionalLight";
  
-const createScene = async (engine: Engine, canvas: HTMLCanvasElement): Promise<Scene> => {
+const createScene = (engine: Engine, canvas: HTMLCanvasElement): Scene => {
     // This creates a basic Babylon Scene object (non-mesh)
     const scene = new Scene(engine);
 
@@ -49,7 +49,7 @@ export const babylonInit = async (): Promise<void> => {
     let engine = new Engine(canvas, true);
 
     // Create the scene
-    const scene = await createScene(engine, canvas);
+    const scene = createScene(engine, canvas);
     scene.autoClear = false;
 
     // Register a render loop to repeatedly render the scene
