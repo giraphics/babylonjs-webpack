@@ -46,7 +46,7 @@ const createScene = (engine: Engine, canvas: HTMLCanvasElement): Scene => {
 export const babylonInit = async (): Promise<void> => {
     const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement;
     // Generate the BABYLON 3D engine
-    let engine = new Engine(canvas, true);
+    let engine = new Engine(canvas, true, {preserveDrawingBuffer : true});
 
     // Create the scene
     const scene = createScene(engine, canvas);
